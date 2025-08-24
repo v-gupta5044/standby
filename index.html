@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>StandBy — YT Music (v3)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      html, body { height: 100%; }
+      body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+      @keyframes pulseSlow {
+        0%,100% { filter: blur(45px) brightness(0.35); transform: scale(1.25); }
+        50%    { filter: blur(46px) brightness(0.40); transform: scale(1.28); }
+      }
+      .animate-pulse-slow { animation: pulseSlow 12s ease-in-out infinite; }
+    </style>
+  </head>
+  <body class="bg-black">
+    <div id="root"></div>
+    <script type="text/babel" src="./app.jsx"></script>
+  </body>
+</html>
