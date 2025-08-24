@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Standby • YT Link Player</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Standby • Player</div>
+    <form id="searchForm" class="add-form" autocomplete="off">
+      <input id="searchInput" type="url" placeholder="Paste a YouTube link (video or youtu.be)…" required />
+      <button type="submit" id="addBtn" aria-label="Add to queue">Add</button>
+    </form>
+  </header>
+
+  <main class="layout">
+    <section class="player-panel">
+      <div class="player-wrap">
+        <img id="albumCoverImg" class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" 
+             alt="Cover" title="Click to set cover (applies to all tracks)" />
+        <div id="player"></div>
+      </div>
+
+      <div class="controls">
+        <button id="prevBtn" title="Prev (Shift+←)">⏮</button>
+        <button id="playPauseBtn" title="Play/Pause (Space)">▶️/⏸</button>
+        <button id="nextBtn" title="Next (Shift+→)">⏭</button>
+
+        <div class="time">
+          <span id="currentTime">0:00</span>
+          <input id="seek" type="range" min="0" max="100" step="0.1" value="0">
+          <span id="duration">0:00</span>
+        </div>
+
+        <div class="volume">
+          <span>🔊</span>
+          <input id="volume" type="range" min="0" max="100" step="1" value="70">
+        </div>
+      </div>
+    </section>
+
+    <aside class="queue-panel">
+      <div class="queue-header">
+        <h2>Queue</h2>
+        <button id="clearQueue" class="ghost">Clear</button>
+      </div>
+      <ul id="queueList" class="queue"></ul>
+    </aside>
+  </main>
+
+  <footer class="foot">
+    <small>No backend. Paste YouTube links to play or build a queue. Global cover image is stored locally.</small>
+  </footer>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="app.js"></script>
+</body>
+</html>

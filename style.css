@@ -1,0 +1,83 @@
+
+:root{
+  --bg:#0f1115; --panel:#151823; --muted:#a7b0c0; --text:#e6e8ee;
+  --accent:#6aa6ff; --border:#23283a;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; background:linear-gradient(180deg, #0f1115, #0b0d12);
+  color:var(--text); font:500 15px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial;
+}
+
+.topbar{
+  position:sticky; top:0; z-index:10;
+  display:flex; gap:12px; align-items:center; justify-content:space-between;
+  padding:14px 18px; background:#0f1115e6; backdrop-filter: blur(6px); border-bottom:1px solid var(--border);
+}
+.brand{font-weight:700; letter-spacing:.3px}
+.add-form{display:flex; gap:8px; width:min(900px, 100%)}
+.add-form input{
+  flex:1; padding:12px 14px; border-radius:12px; border:1px solid var(--border);
+  background:#0c0f17; color:var(--text); outline:none;
+}
+.add-form input:focus{border-color:#2a3350}
+.add-form button{
+  padding:12px 16px; border-radius:12px; border:1px solid var(--border);
+  background:var(--panel); color:var(--text); cursor:pointer;
+}
+.add-form button:hover{border-color:#33406b}
+
+.layout{
+  display:grid; gap:16px; grid-template-columns: 2.2fr 1fr;
+  padding:16px; max-width:1300px; margin:0 auto;
+}
+@media (max-width: 960px){
+  .layout{grid-template-columns:1fr}
+}
+
+.player-panel{
+  background:var(--panel); border:1px solid var(--border);
+  border-radius:16px; padding:14px; box-shadow:0 8px 24px rgba(0,0,0,.25);
+}
+.player-wrap{
+  display:grid; grid-template-columns: 280px 1fr; gap:14px; align-items:stretch;
+}
+@media (max-width: 900px){
+  .player-wrap{grid-template-columns:1fr}
+}
+.cover{
+  width:100%; aspect-ratio:1; object-fit:cover; border-radius:12px;
+  background:#0c0f17; border:1px solid var(--border); cursor:pointer;
+}
+#player{width:100%; aspect-ratio:16/9; background:#0c0f17; border-radius:12px; overflow:hidden}
+
+.controls{display:grid; gap:12px; grid-template-columns:auto auto auto 1fr auto; align-items:center; margin-top:12px}
+.controls button{
+  padding:8px 10px; border-radius:10px; border:1px solid var(--border);
+  background:#101423; color:var(--text); cursor:pointer;
+}
+.controls button:hover{border-color:#2a3350}
+.controls .time{display:flex; align-items:center; gap:10px}
+.controls input[type=range]{width:260px}
+.volume{display:flex; align-items:center; gap:8px}
+
+.queue-panel{
+  background:var(--panel); border:1px solid var(--border);
+  border-radius:16px; padding:14px; box-shadow:0 8px 24px rgba(0,0,0,.2);
+  min-height:200px;
+}
+.queue-header{display:flex; align-items:center; justify-content:space-between; margin-bottom:8px}
+.queue{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; max-height:64vh; overflow:auto}
+.queue li{
+  display:grid; grid-template-columns:56px 1fr auto; gap:10px; align-items:center;
+  padding:8px; border:1px solid var(--border); border-radius:12px; background:#101423;
+}
+.qthumb{width:56px; height:56px; object-fit:cover; border-radius:8px; background:#0c0f17}
+.qtitle{font-weight:600}
+.qmeta{color:var(--muted); font-size:12px}
+.qactions{display:flex; gap:6px}
+.qactions button{padding:6px 8px}
+
+.ghost{background:transparent}
+.foot{padding:20px; text-align:center; color:var(--muted)}
